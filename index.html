@@ -1,12 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Access</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis, tempore.</P>
-    <h1>lOREM</h1>
+
+  <!-- Login Container -->
+  <main class="login-card" id="loginCard">
+    <div class="card-header">
+      <h2>Welcome Back</h2>
+      <p>Enter your credentials to access the portal.</p>
+    </div>
+
+    <form id="loginForm" novalidate>
+      <div class="alert error-alert" id="errorAlert" role="alert" aria-hidden="true">
+        Invalid email or password.
+      </div>
+
+      <div class="input-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" autocomplete="username" placeholder="admin@system.com" required>
+        <span class="field-error" id="emailError">Please enter a valid email.</span>
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <div class="password-wrapper">
+          <input type="password" id="password" autocomplete="current-password" placeholder="••••••••" required>
+          <button type="button" id="togglePassword" aria-label="Toggle password visibility">Show</button>
+        </div>
+        <span class="field-error" id="passwordError">Password must be at least 6 characters.</span>
+      </div>
+
+      <button type="submit" class="btn-primary" id="submitBtn">Sign In</button>
+    </form>
+  </main>
+
+  <!-- Mock Dashboard (Hidden initially) -->
+  <div class="dashboard-view hidden" id="dashboardView">
+    <header class="top-nav">
+      <h3>System Dashboard</h3>
+      <button class="btn-secondary" id="logoutBtn">Log Out</button>
+    </header>
+    <section class="content">
+      <h2>Welcome to the Panel</h2>
+      <p>Authentication mock complete. You are currently viewing the protected view state.</p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
